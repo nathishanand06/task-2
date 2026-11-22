@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore internships by role, company, and domain.">
+  <title>Internship Board</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to internships</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="Internship Board home"><span class="brand-mark">IB</span> Internship Board</a>
+      <span class="header-note">Find your next opportunity</span>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">CAREER STARTS HERE</p>
+      <h1 id="page-title">Discover internships<br><span>that move you forward.</span></h1>
+      <p class="hero-copy">Explore beginner-friendly opportunities, find a domain you love, and take the next step.</p>
+      <div class="stats" aria-label="Board summary">
+        <div><strong id="result-count">0</strong><span>Opportunities</span></div>
+        <div><strong>6</strong><span>Career domains</span></div>
+        <div><strong>100%</strong><span>Made for learners</span></div>
+      </div>
+    </section>
+
+    <section class="search-panel" aria-label="Search and filter internships">
+      <div class="search-field">
+        <label for="search-input">Search internships</label>
+        <input id="search-input" type="search" placeholder="Try “Python”, “design”, or a company">
+      </div>
+      <div class="filter-field">
+        <label for="domain-filter">Domain</label>
+        <select id="domain-filter">
+          <option value="all">All domains</option>
+          <option value="Software Development">Software Development</option>
+          <option value="Data Science">Data Science</option>
+          <option value="Design">Design</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+          <option value="Cloud Computing">Cloud Computing</option>
+        </select>
+      </div>
+      <button id="clear-filters" class="clear-button" type="button">Clear filters</button>
+    </section>
+
+    <section class="list-section" aria-labelledby="listing-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">HAND-PICKED FOR YOU</p><h2 id="listing-title">Latest opportunities</h2></div>
+        <p id="status-text" class="status-text" role="status" aria-live="polite">Loading internships…</p>
+      </div>
+      <div id="error-state" class="message-card" hidden>
+        <h3>We couldn't load the internships</h3>
+        <p>Please check your connection and try again.</p>
+        <button id="retry-button" class="primary-button" type="button">Try again</button>
+      </div>
+      <div id="empty-state" class="message-card" hidden>
+        <div class="empty-icon" aria-hidden="true">⌕</div>
+        <h3>No internships found</h3>
+        <p>Try another keyword or choose a different domain.</p>
+      </div>
+      <div id="internship-grid" class="internship-grid" aria-busy="true"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner"><span>Internship Board</span><span>Built with HTML, CSS &amp; JavaScript</span></div>
+  </footer>
+</body>
+</html>
